@@ -1,0 +1,138 @@
+* {
+  margin: 0px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(27, 0, 0);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-inline: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.container {
+  width: 100%;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container input {
+  display: none;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  max-width: 650px;
+  width: 55%;
+  min-width: 200px;
+  height: 40px;
+  background-color: #eee;
+  padding-inline: 20px;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: height 0.3s ease-in-out, max-width 0.3s ease-in,
+    width 0.3s ease-in;
+  background-repeat: no-repeat;
+  background-size: auto 500px;
+  background-position: top center;
+}
+
+.card h2 {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease-in;
+  text-align: center;
+}
+
+.card p {
+  color: aliceblue;
+  position: absolute;
+  z-index: 1;
+  font-size: large;
+  bottom: -10px;
+  filter: blur(1px) opacity(0);
+  transition: all 0.5s ease-out;
+}
+
+label .card::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  left: 0;
+  height: 100px;
+  transition: all 0.3s ease-in;
+  background-image: linear-gradient(rgba(0, 0, 0, 0));
+}
+
+input:checked + label .card {
+  height: 450px;
+  width: 60%;
+  max-width: 700px;
+  justify-content: start;
+}
+
+input:checked + label .card h2 {
+  font-size: 3rem;
+  top: 0;
+  transform: translateY(0);
+}
+
+input:checked + label .card::after {
+  bottom: 0;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.8)
+  );
+}
+
+input:checked + label .card p {
+  bottom: 20px;
+  filter: blur(0px) opacity(1);
+}
+
+.card1 {
+  background-image: url("https://axa.co.id/documents/1127000/1127127/149+-+5-fakta-unik-kota-jakarta-yang-jarang-diketahui-min.jpg/233fcabe-d0ae-e1b4-f9cc-bdde6236af94?t=1621492256886");
+}
+
+.card2 {
+  background-image: url("https://asset.kompas.com/crops/yCNRG1fhCa38nX-xMlq66O8lPl4=/0x0:780x520/750x500/data/photo/2023/02/26/63fb8b04dc954.jpg");
+}
+
+.card3 {
+  background-image: url("https://studio.mrngroup.co/storage/app/media/Prambors/Editorial%202/Jogja-20230118165851.webp?tr=w-600");
+}
+
+.card4 {
+  background-image: url("https://img.inews.co.id/media/1200/files/inews_new/2024/01/30/Julukan_kota_Surabaya.jpg");
+}
+
+@media screen and (max-width: 650px) {
+  .card {
+    padding-inline: 10px;
+    width: 80%;
+  }
+  input:checked + label .card {
+    width: 90%;
+  }
+}
