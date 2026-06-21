@@ -1,4 +1,4 @@
-CSS Accordion Cards – City Showcase
+# CSS Accordion Cards – City Showcase
 
 An interactive, image-based accordion list built with pure CSS (no JavaScript) using the checked radio-button technique. Clicking a card expands it into a full-height image panel with a gradient overlay and animated text reveal, while collapsing the others — similar to a Netflix-style expanding card UI.
 
